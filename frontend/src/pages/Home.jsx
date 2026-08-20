@@ -18,6 +18,11 @@ export default function Home() {
         <h1>Last Seen</h1>
         <p>Considered clothing for people who notice details.</p>
       </div>
+      <div className="trust-bar">
+        <span>Free shipping over ₹999</span>
+        <span>Easy 7-day returns</span>
+        <span>Secure checkout</span>
+      </div>
       <div className="page">
         <h2 style={{ marginTop: 0 }}>Shop by Category</h2>
         {error && <p className="error">{error}</p>}
