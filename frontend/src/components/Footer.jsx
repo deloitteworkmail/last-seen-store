@@ -1,12 +1,34 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  function handleSubscribe(e) {
+    e.preventDefault();
+    if (!email) return;
+    setSubscribed(true);
+    setEmail("");
+  }
+
   return (
     <footer className="site-footer">
       <div className="footer-columns">
         <div className="footer-col">
           <div className="footer-brand">Last Seen</div>
           <p>Considered clothing for people who notice details.</p>
+          <form className="newsletter-form" onSubmit={handleSubscribe}>
+            <input
+              type="email"
+              placeholder="Your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">Join</button>
+          </form>
+          {subscribed && <p className="newsletter-thanks">You're on the list.</p>}
         </div>
         <div className="footer-col">
           <h4>Shop</h4>

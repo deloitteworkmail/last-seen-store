@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { formatPrice } from "../utils/currency";
+import ProductCard from "../components/ProductCard";
 
 export default function CategoryPage() {
   const { categoryName } = useParams();
@@ -25,15 +25,7 @@ export default function CategoryPage() {
       <h1>{categoryName}</h1>
       <div className="grid">
         {products.map((product) => (
-          <Link
-            key={product.id}
-            to={`/product/${product.id}`}
-            className="product-card"
-          >
-            <img src={product.imageUrl} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p className="price">{formatPrice(product.price)}</p>
-          </Link>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
