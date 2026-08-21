@@ -10,6 +10,13 @@ const CATEGORY_IMAGES = {
   Accessories: "/products/wool-beanie.jpg",
 };
 
+const CATEGORY_COLORS = {
+  Shirts: "var(--color-blue)",
+  Jackets: "var(--color-purple)",
+  Shoes: "var(--color-orange)",
+  Accessories: "var(--color-pink)",
+};
+
 export default function Home() {
   const [categories, setCategories] = useState([]);
   const [featured, setFeatured] = useState([]);
@@ -32,6 +39,8 @@ export default function Home() {
       <div className="hero">
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
+        <div className="hero-orb hero-orb-3" />
+        <div className="hero-orb hero-orb-4" />
         <div className="hero-content">
           <h1>Last Seen</h1>
           <p>Considered clothing for people who notice details.</p>
@@ -58,11 +67,12 @@ export default function Home() {
                 key={category.id}
                 to={`/category/${category.name}`}
                 className="category-card"
-                style={
-                  CATEGORY_IMAGES[category.name]
-                    ? { backgroundImage: `url(${CATEGORY_IMAGES[category.name]})` }
-                    : undefined
-                }
+                style={{
+                  backgroundImage: CATEGORY_IMAGES[category.name]
+                    ? `url(${CATEGORY_IMAGES[category.name]})`
+                    : undefined,
+                  "--cat-color": CATEGORY_COLORS[category.name] || "var(--color-accent)",
+                }}
               >
                 <span className="category-card-label">{category.name}</span>
               </Link>
