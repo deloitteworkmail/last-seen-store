@@ -956,3 +956,13 @@ button:disabled {
     transform: none !important;
   }
 }
+
+.info-page {
+  max-width: 640px;
+}
+
+.info-page p {
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+  margin: 0 0 1rem;
+}

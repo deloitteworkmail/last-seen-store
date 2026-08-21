@@ -39,15 +39,15 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Help</h4>
-          <span>Shipping &amp; Returns</span>
-          <span>Size Guide</span>
-          <span>Contact Us</span>
+          <Link to="/info/shipping-returns">Shipping &amp; Returns</Link>
+          <Link to="/info/size-guide">Size Guide</Link>
+          <Link to="/info/contact">Contact Us</Link>
         </div>
         <div className="footer-col">
           <h4>About</h4>
-          <span>Our Story</span>
-          <span>Sustainability</span>
-          <span>Careers</span>
+          <Link to="/info/our-story">Our Story</Link>
+          <Link to="/info/sustainability">Sustainability</Link>
+          <Link to="/info/careers">Careers</Link>
         </div>
       </div>
       <div className="footer-bottom">

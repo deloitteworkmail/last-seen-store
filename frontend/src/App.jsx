@@ -10,6 +10,7 @@ import CartPage from "./pages/CartPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import OrdersPage from "./pages/OrdersPage";
 import AdminPage from "./pages/AdminPage";
+import InfoPage from "./pages/InfoPage";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
             <Route path="/orders" element={<OrdersPage />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/info/:slug" element={<InfoPage />} />
           </Routes>
           <Footer />
         </BrowserRouter>
