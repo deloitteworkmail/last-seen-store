@@ -223,24 +223,43 @@ button:disabled {
   margin-top: 1.75rem;
 }
 
+.category-grid {
+  margin-bottom: 3rem;
+}
+
 .category-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  align-items: flex-end;
+  height: 220px;
   border-radius: var(--radius-md);
   text-decoration: none;
-  color: var(--color-ink);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-surface);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 9, 7, 0.75) 0%, rgba(10, 9, 7, 0.05) 60%);
+}
+
+.category-card-label {
+  position: relative;
+  z-index: 1;
+  color: white;
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  transition: transform 0.15s, box-shadow 0.15s;
+  padding: 1.1rem 1.25rem;
 }
 
 .category-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
@@ -541,17 +560,65 @@ button:disabled {
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  padding: 2rem;
-  text-align: center;
+  background: #f1ede3;
   color: var(--color-ink-soft);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  margin-top: 2rem;
 }
 
-.site-footer .footer-brand {
+.footer-columns {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-col h4 {
+  margin: 0 0 0.3rem;
+  color: var(--color-ink);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-col a,
+.footer-col span {
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.footer-col a:hover {
+  color: var(--color-accent);
+}
+
+.footer-brand {
   font-family: var(--font-serif);
   color: var(--color-ink);
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 720px) {
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Responsive */

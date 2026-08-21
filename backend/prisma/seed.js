@@ -7,7 +7,7 @@ const CATEGORIES = [
     products: [
       { name: "Classic White Shirt", price: 899, description: "A crisp cotton button-up for everyday wear.", icon: "classic-white-shirt", ext: "jpg" },
       { name: "Denim Casual Shirt", price: 1299, description: "Relaxed-fit denim shirt, great for layering.", icon: "denim-casual-shirt", ext: "jpg" },
-      { name: "Striped Linen Shirt", price: 1499, description: "Breathable linen shirt with a subtle stripe.", icon: "striped-linen-shirt" },
+      { name: "Striped Linen Shirt", price: 1499, description: "Breathable linen shirt with a subtle stripe.", icon: "striped-linen-shirt", ext: "jpg" },
     ],
   },
   {
@@ -15,7 +15,7 @@ const CATEGORIES = [
     products: [
       { name: "Bomber Jacket", price: 2999, description: "Lightweight bomber jacket with ribbed cuffs.", icon: "bomber-jacket" },
       { name: "Denim Jacket", price: 2599, description: "Timeless denim jacket, fits over any outfit.", icon: "denim-jacket", ext: "jpg" },
-      { name: "Rain Shell", price: 2199, description: "Waterproof shell jacket for unpredictable weather.", icon: "rain-shell" },
+      { name: "Rain Shell", price: 2199, description: "Waterproof shell jacket for unpredictable weather.", icon: "rain-shell", ext: "jpg" },
     ],
   },
   {
