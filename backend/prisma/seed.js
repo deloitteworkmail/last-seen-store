@@ -61,6 +61,18 @@ async function main() {
       });
     }
   }
+  if (process.env.ADMIN_EMAIL) {
+    const result = await prisma.user.updateMany({
+      where: { email: process.env.ADMIN_EMAIL },
+      data: { isAdmin: true },
+    });
+    console.log(
+      result.count > 0
+        ? `Promoted ${process.env.ADMIN_EMAIL} to admin.`
+        : `No user found with email ${process.env.ADMIN_EMAIL} yet — sign up first, then re-run.`
+    );
+  }
+
   console.log("Seed complete.");
 }
 
